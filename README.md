@@ -11,7 +11,7 @@ The assessment is divided into four parts:
 1. Helper Functions – Utility functions for manipulating headers, rows, and labels.
 2. Evaluating a Decision Tree – Functions to traverse and validate decision trees.
 3. Training a Decision Tree – Functions to learn trees using inductive partitioning.
-4. Extension – Implementation of attribute selection using **information gain** to optimize the decision tree.
+4. Extension – Implementation of attribute selection using information gain to optimize the decision tree.
 
 # Core Concepts
 
@@ -24,7 +24,6 @@ The assessment is divided into four parts:
 # Files
 
 - `eo409.hs`: Main Haskell file containing all functions grouped by assessment question.
-- `template.hs`: Provided by the module, includes essential type definitions and sample data.
 
 # Restrictions
 
