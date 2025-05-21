@@ -1,3 +1,4 @@
+import Main (maxGainAttribute, removeAttribute)
 ----------------
 -- # Key data types
 
@@ -71,4 +72,29 @@ eqLabel :: Label -> Label -> Bool
 eqLabel Yes Yes = True 
 eqLabel No No = True 
 eqLabel _ _ = False
+
+-- lookupAttribute function 
+-- given a header, row and an attribute 
+-- returns the value of the attribute in the row
+-- if h matches attr return just v 
+-- otherwise move to the next attribute-value pair 
+
+lookupAttribute :: Header -> Row -> Attribute -> Maybe Value
+lookupAttribute (h:hs) (v:vs) attr 
+  | h == attr  = Just v
+  | otherwise  = lookupAttribute hs vs attr
+lookupAttribute [] [] _ = Nothing
+
+-- removeAttribute function 
+-- given a header, row and an attribute 
+-- returns the row with the attribute removed 
+-- takes first attribute h and first value v 
+-- if h matches attr skip v and return the rest of the row 
+-- if h does not match attr keep v and continue checking the rest of the attributes 
+
+removeAttribute :: Header -> Row -> Attribute -> Row 
+removeAttribute (h:hs) (v:vs) attr 
+  | h == attr  = vs
+  | otherwise  = v : removeAttribute hs vs attr
+lookupAttribute [] [] _ = []
 
