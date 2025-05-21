@@ -60,3 +60,15 @@ optimisedDecisionTree = Node "outlook" [
     ])
   ]
 
+-- Helper Functions -- 
+
+-- eqLabel function 
+-- checks if two Labels are the same or not 
+-- if inputs are the same output True 
+-- the wildcard is used for cases when inputs are different
+
+eqLabel :: Label -> Label -> Bool 
+eqLabel Yes Yes = True 
+eqLabel No No = True 
+eqLabel _ _ = False
+
